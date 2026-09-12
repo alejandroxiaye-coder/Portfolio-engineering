@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio de Ingeniería</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0E2A3D;
+    --bg-panel: #123449;
+    --line: rgba(237,239,242,0.14);
+    --line-soft: rgba(237,239,242,0.06);
+    --fg: #EDEFF2;
+    --muted: #7C93A3;
+    --accent: #E4572E;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size: 40px 40px;
+    color:var(--fg);
+    font-family:'Space Grotesk', sans-serif;
+    line-height:1.55;
+  }
+  .mono{ font-family:'JetBrains Mono', monospace; }
+  a{ color:inherit; }
+  .wrap{ max-width:920px; margin:0 auto; padding:0 28px; }
+
+  header.top{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:22px 0; border-bottom:1px solid var(--line);
+  }
+  header.top .wrap{ display:flex; justify-content:space-between; align-items:center; width:100%; }
+  .brand{ font-weight:600; font-size:1.05rem; letter-spacing:0.02em; }
+  nav a{ text-decoration:none; color:var(--muted); font-size:0.92rem; margin-left:26px; }
+  nav a:hover{ color:var(--fg); }
+
+  /* HERO — title block styled like a technical drawing's info box */
+  .hero{ padding:90px 0 60px; }
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 3.6rem);
+    font-weight:700; line-height:1.08; max-width:11ch;
+  }
+  .hero p.role{
+    margin-top:18px; color:var(--muted); font-size:1.1rem; max-width:46ch;
+  }
+  .titleblock{
+    margin-top:56px; border:1px solid var(--line); border-radius:2px;
+    display:grid; grid-template-columns:repeat(4, 1fr);
+  }
+  .titleblock div{ padding:14px 18px; border-right:1px solid var(--line); }
+  .titleblock div:last-child{ border-right:none; }
+  .titleblock .label{ font-size:0.68rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; }
+  .titleblock .value{ margin-top:6px; font-size:0.92rem; }
+
+  section{ padding:64px 0; border-top:1px solid var(--line); }
+  h2{ font-size:1.5rem; font-weight:600; margin-bottom:28px; }
+  section.about p{ max-width:64ch; color:var(--fg); }
+  section.about p + p{ margin-top:16px; }
+  .tags{ display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
+  .tag{
+    font-family:'JetBrains Mono', monospace; font-size:0.76rem;
+    border:1px solid var(--line); padding:5px 10px; border-radius:2px; color:var(--muted);
+  }
+
+  .projects{ display:flex; flex-direction:column; gap:1px; background:var(--line); }
+  .project{
+    background:var(--bg); padding:28px; display:grid;
+    grid-template-columns:1fr auto; gap:16px; align-items:start;
+  }
+  .project h3{ font-size:1.15rem; font-weight:600; }
+  .project .desc{ color:var(--muted); margin-top:8px; max-width:56ch; font-size:0.95rem; }
+  .status{
+    font-family:'JetBrains Mono', monospace; font-size:0.72rem;
+    padding:4px 9px; border-radius:2px; white-space:nowrap; height:fit-content;
+    border:1px solid var(--accent); color:var(--accent);
+  }
+  .status.concept{ border-color:var(--muted); color:var(--muted); }
+  .project .meta{ margin-top:14px; display:flex; gap:18px; }
+  .project .meta a{
+    font-family:'JetBrains Mono', monospace; font-size:0.78rem; color:var(--fg);
+    text-decoration:none; border-bottom:1px solid var(--line);
+  }
+  .project .meta a:hover{ border-color:var(--fg); }
+
+  footer{ padding:40px 0 60px; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+  footer a{ text-decoration:none; color:var(--muted); font-size:0.9rem; }
+  footer a:hover{ color:var(--fg); }
+
+  @media (max-width:640px){
+    .titleblock{ grid-template-columns:1fr 1fr; }
+    .titleblock div:nth-child(2){ border-right:none; }
+    .project{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">TU NOMBRE</div>
+    <nav>
+      <a href="#about">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Ingeniería aplicada, medida y documentada.</h1>
+    <p class="role">Estudiante de Ingeniería Mecánica en la UPC (Terrassa). Diseño, construyo e instrumento proyectos electromecánicos — con un interés particular en aplicarlos al powerlifting y a herramientas de producción audiovisual.</p>
+
+    <div class="titleblock mono">
+      <div><div class="label">Nombre</div><div class="value">Tu Nombre</div></div>
+      <div><div class="label">Programa</div><div class="value">Ing. Mecánica — UPC</div></div>
+      <div><div class="label">Ubicación</div><div class="value">Barcelona, ES</div></div>
+      <div><div class="label">Rev.</div><div class="value">2026</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <h2>Sobre mí</h2>
+    <p>Compito en powerlifting a nivel internacional representando a China, con récords asiáticos, y en España he competido a nivel nacional junior. Ese mismo mundo — cargas, técnica, datos de rendimiento — es el que me lleva a construir instrumentación propia en vez de depender solo de equipo comercial.</p>
+    <p>También trabajo como coach de powerlifting y me dedico a la fotografía y videografía, lo que cruza de forma natural con proyectos de mecánica aplicados a producción visual (motion control, turntables, estabilización).</p>
+    <div class="tags">
+      <span class="tag">Diseño mecánico</span>
+      <span class="tag">Instrumentación</span>
+      <span class="tag">Impresión 3D</span>
+      <span class="tag">ESP32 / Arduino</span>
+      <span class="tag">Powerlifting</span>
+      <span class="tag">Fotografía / Video</span>
+    </div>
+  </div>
+</section>
+
+<section id="proyectos">
+  <div class="wrap">
+    <h2>Proyectos</h2>
+    <div class="projects">
+
+      <div class="project">
+        <div>
+          <h3>Velocímetro de barra (Bar Speed Tracker)</h3>
+          <div class="desc">Dispositivo con IMU (ESP32 + GY-6500) que mide la velocidad de la barra en press, sentadilla y peso muerto, para dar feedback de entrenamiento basado en velocidad (VBT). Validado contra vídeo a cámara lenta con atletas reales.</div>
+          <div class="meta">
+            <a href="#">Repositorio →</a>
+            <a href="#">Documentación →</a>
+          </div>
+        </div>
+        <div class="status">En desarrollo</div>
+      </div>
+
+      <div class="project">
+        <div>
+          <h3>[Próximo proyecto]</h3>
+          <div class="desc">Espacio reservado — añade aquí el siguiente proyecto de tu lista cuando lo empieces.</div>
+        </div>
+        <div class="status concept">Concepto</div>
+      </div>
+
+      <div class="project">
+        <div>
+          <h3>[Próximo proyecto]</h3>
+          <div class="desc">Espacio reservado — añade aquí el siguiente proyecto de tu lista cuando lo empieces.</div>
+        </div>
+        <div class="status concept">Concepto</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer id="contacto">
+  <div class="wrap">
+    <span class="mono" style="color:var(--muted); font-size:0.85rem;">© 2026</span>
+    <div>
+      <a href="#" style="margin-right:20px;">GitHub</a>
+      <a href="#" style="margin-right:20px;">LinkedIn</a>
+      <a href="#">Email</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
